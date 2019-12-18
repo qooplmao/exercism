@@ -5,7 +5,11 @@ const SECONDS_IN_EARTH_YEAR float64 = 31557600
 type Planet string
 
 func Age(seconds float64, planet Planet) float64 {
-	return seconds / (SECONDS_IN_EARTH_YEAR * numberOfEarthYearsForOneYearOnPlanet(planet))
+	return seconds / numberOfSecondsInAYearOnPlanet(planet)
+}
+
+func numberOfSecondsInAYearOnPlanet(planet Planet) float64 {
+	return SECONDS_IN_EARTH_YEAR * numberOfEarthYearsForOneYearOnPlanet(planet)
 }
 
 func numberOfEarthYearsForOneYearOnPlanet(planet Planet) float64 {
